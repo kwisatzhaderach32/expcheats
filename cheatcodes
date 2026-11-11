@@ -18,3 +18,17 @@ RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 5000
 CMD ["python", "app.py"]
+
+at cmd prompt:
+ docker build -t flask-docker .
+ docker run -p 5000:5000 flask-docker
+
+
+exp01
+echo "feature load" >> feature.txt
+git add .
+git commit -m "second commit"
+git push origin feature
+git checkout main
+git merge feature
+git push origin main
